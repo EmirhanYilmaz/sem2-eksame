@@ -1,4 +1,105 @@
+body{
+    overflow-x: hidden;
+    background-color: #FFF0E6;
+
+}
 /* forside css */
+.navbar-outer{
+    height: 70px;
+    display: flex;
+    margin-top: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-inner{
+    height: 70px;
+    width: 80vw;
+    background-color: #0088CC;
+    border-radius: 10px;
+    display: flex;
+    justify-content: end;
+}
+.logo{
+    height: 50px;
+    width: 50px;
+}
+.burger-icon{
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.bar{
+    border-radius: 10px;
+}
+
+.burger-icon .bar {
+    display: block !important;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 4px;
+    background-color: antiquewhite;
+    margin: 6px 0;
+    
+}
+
+
+.nav-links a,
+.header-left {
+    color: antiquewhite !important;
+    font-size: 10px;
+}
+.header-left {
+    max-width: 70px;
+}
+.nav-links {
+    max-width: 210px;
+}
+.title {
+    display: none;
+}
+.big-font {
+    padding-top: 60%;
+    margin-left: 15px;
+    color: antiquewhite;
+}
+
+.nav-links {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 100vw !important;
+    background-color: #0088CC;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 2px;
+}
+
+.nav-links.show {   
+    display: flex;
+}
+
+.nav-links a {
+    margin: 10px;
+}
+
+
+.links {
+    font-size: 20px !important;
+    margin: 30px 0 !important;
+}
+
+.landingpage-outer-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+}
 
 /* ---------------------------------- */
 
@@ -6,11 +107,14 @@
 
 /* Om os Css */
 
+
+
 /* ---------------------------------- */
 
 
 
 /* Kontakt os css */
+
 
 /* ---------------------------------- */
 
