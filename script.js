@@ -39,5 +39,25 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
 
+        document.addEventListener("DOMContentLoaded", function () {
+    const countryMenuButton = document.getElementById('country-menu');
+    const dropdownMenu = document.getElementById('dropdown-menu');
+
+    countryMenuButton.addEventListener('click', function (event) {
+        // Prevent the document-level click handler from firing
+        event.stopPropagation();
+        // Toggle the display
+        dropdownMenu.style.display = dropdownMenu.style.display === 'none' ? 'block' : 'none';
+    });
+
+    // Hide the dropdown when clicking anywhere else on the page
+    document.addEventListener('click', function () {
+        if (dropdownMenu.style.display === 'block') {
+            dropdownMenu.style.display = 'none';
+        }
+    });
+});
+
+
 
         
