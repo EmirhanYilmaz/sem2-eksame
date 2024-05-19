@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
     <title>Rejseguiden</title>
 </head>
 <body>
@@ -12,10 +13,11 @@
         <div class="logo">logo</div>
         <div class="navbar-inner">
             <div class="nav-links">
-                <a class="links antiquewhite" href="/projects.html">Projects</a>
-                <a class="links antiquewhite" href="/about.html">About</a>
-                <a class="links antiquewhite" href="/contact.html">Contact</a>
-                <a class="links antiquewhite" href="/documentation.html">Documentation</a>
+                <button class="close-menu" id="close-menu">Luk menu</button>
+                <a class="links" href="/projects.html">Forside</a>
+                <a class="links" href="/about.html">Test din viden</a>
+                <a class="links" href="/contact.html">Om os</a>
+                <a class="links" href="/documentation.html">Kontakt os</a>
     
             </div>
     
@@ -29,20 +31,27 @@
 
     <div class="landingpage-outer-container">
         <div class="landingpage-content">
-            <h4 class="blue">Velkommen til</h4>
-            <h1 class="yellow">Rejseguiden</h1>
-            <p class="landingpage-info">
-                Din Rejseguide hjælper dig med alt du har brug for at vide inden du drager afsted på dit nye eventyr!
-            </p>
+            <div class="hero-content">
+                <h4 class="blue">Velkommen til</h4>
+                <h1 class="yellow">Rejseguiden</h1>
+                <p class="landingpage-info">
+                    Din Rejseguide hjælper dig med alt du har brug for at vide inden du drager afsted på dit nye eventyr!
+                </p>
+            </div>
+            
             <div class="choose-country-btn" id="country-menu">
                 Vælg land
                 <div class="dropdown-content" id="dropdown-menu" style="display: none;">
-                    <a href="#country1">Country 1</a>
-                    <a href="#country2">Country 2</a>
-                    <a href="#country3">Country 3</a>
+                    <a href="/lande/danmark.html">Danmark </a>
+                    <a href="#country2">Country </a>
+                    <a href="#country3">Country </a>
                 </div>
+            </div>  
+            <div class="map-outer-container">
+                <div id="country-name">Hold over et land</div>  
+                <div id="map-container"></div>  
+                <p>Tryk på det land du gerne vil vide mere om! </p>
             </div>
-            
             
         </div>
 

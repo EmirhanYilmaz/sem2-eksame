@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="/script.js"></script>
+    <title>Land Quiz</title>
+</head>
+<body>
+    <h1>Land Quiz</h1>
+    
+    <div class="quiz-section" id="denmark-quiz">
+        <h2>Danmark Quiz</h2>
+        <!-- Denmark Questions -->
+        <div class="question" data-correct="2">
+            <p>Hvad er hovedstaden i Danmark?</p>
+            <div class="answers">
+                <label><input type="radio" name="q1" value="1"> Aarhus</label>
+                <label><input type="radio" name="q1" value="2"> København</label>
+                <label><input type="radio" name="q1" value="3"> Odense</label>
+            </div>
+        </div>
+        <div class="question" data-correct="1">
+            <p>Hvad er det officielle sprog i Danmark?</p>
+            <div class="answers">
+                <label><input type="radio" name="q2" value="1"> Dansk</label>
+                <label><input type="radio" name="q2" value="2"> Svensk</label>
+                <label><input type="radio" name="q2" value="3"> Norsk</label>
+            </div>
+        </div>
+        <div class="question" data-correct="3">
+            <p>Hvad er valutaen i Danmark?</p>
+            <div class="answers">
+                <label><input type="radio" name="q3" value="1"> Euro</label>
+                <label><input type="radio" name="q3" value="2"> Dollar</label>
+                <label><input type="radio" name="q3" value="3"> Krone</label>
+            </div>
+        </div>
+        <div class="question" data-correct="1">
+            <p>Hvilken berømt forfatter var dansk?</p>
+            <div class="answers">
+                <label><input type="radio" name="q4" value="1"> Hans Christian Andersen</label>
+                <label><input type="radio" name="q4" value="2"> William Shakespeare</label>
+                <label><input type="radio" name="q4" value="3"> Mark Twain</label>
+            </div>
+        </div>
+        <div class="question" data-correct="2">
+            <p>Hvilket af disse er et dansk firma?</p>
+            <div class="answers">
+                <label><input type="radio" name="q5" value="1"> Sony</label>
+                <label><input type="radio" name="q5" value="2"> Lego</label>
+                <label><input type="radio" name="q5" value="3"> Samsung</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="quiz-section" id="colombia-quiz">
+        <h2>Colombia Quiz</h2>
+        <!-- Colombia Questions -->
+        <div class="question" data-correct="3">
+            <p>Hvad er hovedstaden i Colombia?</p>
+            <div class="answers">
+                <label><input type="radio" name="q6" value="1"> Medellín</label>
+                <label><input type="radio" name="q6" value="2"> Cali</label>
+                <label><input type="radio" name="q6" value="3"> Bogotá</label>
+            </div>
+        </div>
+        <div class="question" data-correct="2">
+            <p>Hvad er det officielle sprog i Colombia?</p>
+            <div class="answers">
+                <label><input type="radio" name="q7" value="1"> Portugisisk</label>
+                <label><input type="radio" name="q7" value="2"> Spansk</label>
+                <label><input type="radio" name="q7" value="3"> Fransk</label>
+            </div>
+        </div>
+        <div class="question" data-correct="1">
+            <p>Hvad er valutaen i Colombia?</p>
+            <div class="answers">
+                <label><input type="radio" name="q8" value="1"> Peso</label>
+                <label><input type="radio" name="q8" value="2"> Dollar</label>
+                <label><input type="radio" name="q8" value="3"> Real</label>
+            </div>
+        </div>
+        <div class="question" data-correct="2">
+            <p>Hvilken berømt kunstner er fra Colombia?</p>
+            <div class="answers">
+                <label><input type="radio" name="q9" value="1"> Pablo Picasso</label>
+                <label><input type="radio" name="q9" value="2"> Fernando Botero</label>
+                <label><input type="radio" name="q9" value="3"> Salvador Dalí</label>
+            </div>
+        </div>
+        <div class="question" data-correct="3">
+            <p>Hvilken af disse er en colombiansk by?</p>
+            <div class="answers">
+                <label><input type="radio" name="q10" value="1"> Lima</label>
+                <label><input type="radio" name="q10" value="2"> Buenos Aires</label>
+                <label><input type="radio" name="q10" value="3"> Cartagena</label>
+            </div>
+        </div>
+    </div>
+
+    <button onclick="checkAnswers()">Indsend svar</button>
+    <div id="result" class="result"></div>
+
+</body>
+</html>
