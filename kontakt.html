@@ -6,24 +6,57 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
     <title>Rejseguiden | Kontakt</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/89b13f8dac.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init({
+              publicKey: "Y-p5LGLaY0BflWEc_",
+            });
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // these IDs from the previous steps
+                emailjs.sendForm('service_8b7sj9x', 'template_p1ms1e9', this)
+                    .then(() => {
+                        console.log('SUCCESS!');
+                    }, (error) => {
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
+    </script>
 </head>
 <body>
+    
 
     <div class="navbar-outer">
         <div class="logo">
-            <a href="/shanneeksamen/sem2-eksame/index.html">
+            <a href="/index.html">
                 <img src="./ressourcer/rejseguiden_logo_uden_baggrund.png" alt="logo" class="responsive-logo">
             </a>
         </div>
         <div class="navbar-inner">
             <div class="nav-links">
-                <a class="links antiquewhite" href="/shanneeksamen/sem2-eksame/index.html">Home</a>
-                <a class="links antiquewhite" href="/shanneeksamen/sem2-eksame/om-os.html">About</a>
-                <a class="links antiquewhite" href="/shanneeksamen/sem2-eksame/kontakt.html">Contact</a>
-                <a class="links antiquewhite" href="/documentation.html">Documentation</a>
+                <button class="close-menu" id="close-menu"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg></button>
+                <img src="./ressourcer/rejseguiden_logo_uden_baggrund.png" alt="logo" class="mobile-menu-logo">
+                <a class="links" href="/">Forside</a>
+                <a class="links" href="/test-din-viden.html">Test din viden</a>
+                <a class="links" href="/om-os.html">Om os</a>
+                <a class="links" href="/kontakt.html">Kontakt os</a>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.tiktok.com" target="_blank" class="social-icon"><i class="fab fa-tiktok"></i></a>
+                </div>
+    
             </div>
+    
             <div class="burger-icon" id="burger-menu">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -32,14 +65,20 @@
         </div>
     </div>
 
+    <div class="container">
     <div class="contact-container">
-        <span class="message-icon">&#9993;</span>
-        <h1>Kontakt os</h1>
+
+        <div class="kontakt-heading">
+            <h1>Kontakt os</h1>
+            <span class="message-icon">&#9993;</span>
+        </div>
+        
+
         <div class="header-with-icon">
             <h4>For spørgsmål eller henvendelse kan du kontakte os via formularen</h4>
         </div>
         <div class="contact-form-wrapper">
-            <form class="contact-form">
+            <form id="contact-form" class="contact-form">
                 <div class="form-group">
                     <input type="text" id="name" name="name" placeholder="Name" required>
                     <label for="name"></label>
@@ -56,12 +95,18 @@
             </form>
         </div>
     </div>
-
-    <div class="social-icons">
-        <a href="https://www.instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.tiktok.com" target="_blank" class="social-icon"><i class="fab fa-tiktok"></i></a>
+</div>
+    <div class="footer-outer-container">
+        <div>
+            
+        </div>
+        <div class="social-icons">
+            <a href="https://www.instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.tiktok.com" target="_blank" class="social-icon"><i class="fab fa-tiktok"></i></a>
+        </div>
     </div>
+    
 
 </body>
 </html>

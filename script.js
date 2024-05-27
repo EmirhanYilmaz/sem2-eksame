@@ -1,17 +1,15 @@
 document.addEventListener('DOMContentLoaded', function() {
     const burgerMenu = document.getElementById('burger-menu');
     const navLinks = document.querySelector('.nav-links');
-    const closeMenuButton = document.getElementById('close-menu');
+    const closeMenuButton = document.querySelector('#close-menu');
 
     burgerMenu.addEventListener('click', function(event) {
         event.stopPropagation(); // Prevent the click from bubbling up to the document
         navLinks.classList.toggle('show');
     });
 
-    document.addEventListener('click', function(event) {
-        if (!navLinks.contains(event.target)) {
-            navLinks.classList.remove('show');
-        }
+    closeMenuButton.addEventListener('click', function(event) {
+        navLinks.classList.remove('show');
     });
     
 });
@@ -19,6 +17,8 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener("DOMContentLoaded", function () {
     const countryMenuButton = document.getElementById('country-menu');
     const dropdownMenu = document.getElementById('dropdown-menu');
+
+    if(countryMenuButton){
 
     countryMenuButton.addEventListener('click', function (event) {
         event.stopPropagation();
@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
             dropdownMenu.style.display = 'none';
         }
     });
+    }
 
     // Ensure that countriesData is defined
     const countriesData = [
@@ -940,41 +941,15 @@ document.addEventListener("DOMContentLoaded", function () {
         .attr("fill", "#0088cc") // Set the initial fill color
         .attr("stroke", "#ffffff") // Set the stroke color
         .on("mouseover", function (event, d) {
-            d3.select(this).attr("fill", "#ffcc00");
             document.getElementById('country-name').innerText = d.title; // Update the country name
         })
         .on("mouseout", function (event, d) {
             d3.select(this).attr("fill", "#c0c0c0");
             document.getElementById('country-name').innerText = "Hold over et land"; // Reset the country name
         })
+
+       
         
-
-    // Reapply events after resizing
-    window.addEventListener('resize', function () {
-        svg.selectAll(".country")
-            .on("mouseover", function (event, d) {
-                d3.select(this).attr("fill", "#ffcc00");
-                document.getElementById('country-name').innerText = d.title; // Update the country name
-            })
-            .on("mouseout", function (event, d) {
-                d3.select(this).attr("fill", "#c0c0c0");
-                document.getElementById('country-name').innerText = "Hold over et land"; // Reset the country name
-            })
-            
-    });
-
-    function checkAnswers() {
-        let score = 0;
-        const questions = document.querySelectorAll('.question');
-        questions.forEach((question, index) => {
-            const correctAnswer = question.getAttribute('data-correct');
-            const selectedAnswer = question.querySelector('input[type="radio"]:checked');
-            if (selectedAnswer && selectedAnswer.value === correctAnswer) {
-                score++;
-            }
-        });
-        document.getElementById('result').textContent = `Du fik ${score} ud af ${questions.length} rigtige`;
-    }
 });
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -994,10 +969,18 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-
-
-
-
+function checkAnswers() {
+    let score = 0;
+    const questions = document.querySelectorAll('.question');
+    questions.forEach((question, index) => {
+        const correctAnswer = question.getAttribute('data-correct');
+        const selectedAnswer = question.querySelector('input[type="radio"]:checked');
+        if (selectedAnswer && selectedAnswer.value === correctAnswer) {
+            score++;
+        }
+    });
+    document.getElementById('result').textContent = `Du fik ${score} ud af ${questions.length} rigtige`;
+}
 
 
 
