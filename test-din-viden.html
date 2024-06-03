@@ -1,107 +1,303 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/89b13f8dac.js" crossorigin="anonymous"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/89b13f8dac.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Land Quiz</title>
-</head>
-<body>
-
+  </head>
+  <body>
     <div class="navbar-outer">
-        <div class="logo">
-            <a href="/index.html">
-                <img src="./ressourcer/rejseguiden_logo_uden_baggrund.png" alt="logo" class="responsive-logo">
-            </a>
+      <div class="logo">
+        <a href="/index.html">
+          <img
+            src="./ressourcer/rejseguiden_logo_uden_baggrund.png"
+            alt="logo"
+            class="responsive-logo"
+          />
+        </a>
+      </div>
+      <div class="navbar-inner">
+        <div class="nav-links">
+          <button class="close-menu" id="close-menu">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+              <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+              <path
+                d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
+              />
+            </svg>
+          </button>
+          <img
+            src="./ressourcer/rejseguiden_logo_uden_baggrund.png"
+            alt="logo"
+            class="mobile-menu-logo"
+          />
+          <a class="links" href="/">Forside</a>
+          <a class="links" href="/test-din-viden.html">Test din viden</a>
+          <a class="links" href="/om-os.html">Om os</a>
+          <a class="links" href="/kontakt.html">Kontakt os</a>
+          <div class="social-icons">
+            <a
+              href="https://www.instagram.com"
+              target="_blank"
+              class="social-icon"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a
+              href="https://www.facebook.com"
+              target="_blank"
+              class="social-icon"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="https://www.tiktok.com" target="_blank" class="social-icon"
+              ><i class="fab fa-tiktok"></i
+            ></a>
+          </div>
         </div>
-        <div class="navbar-inner">
-            <div class="nav-links">
-                <button class="close-menu" id="close-menu"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg></button>
-                <img src="./ressourcer/rejseguiden_logo_uden_baggrund.png" alt="logo" class="mobile-menu-logo">
-                <a class="links" href="/">Forside</a>
-                <a class="links" href="/test-din-viden.html">Test din viden</a>
-                <a class="links" href="/om-os.html">Om os</a>
-                <a class="links" href="/kontakt.html">Kontakt os</a>
-                <div class="social-icons">
-                    <a href="https://www.instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.tiktok.com" target="_blank" class="social-icon"><i class="fab fa-tiktok"></i></a>
-                </div>
-    
-            </div>
-    
-            <div class="burger-icon" id="burger-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
+
+        <div class="burger-icon" id="burger-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
         </div>
+      </div>
     </div>
 
     <div class="quiz-outer-container">
-        <div class="quiz-intro">
-            <h1>Test din viden</h1>
-            <p>Her på siden kan du udfordre dig selv med en quiz.</p>
-            <p>Test din viden om de forskellige lande!</p>
+      <div class="quiz-intro">
+        <h1>Test din viden</h1>
+        <p>Her på siden kan du udfordre dig selv med en quiz.</p>
+        <p>Test din viden om de forskellige lande!</p>
+      </div>
+      <div class="btn-question-container">
+        <div class="tab-buttons-container">
+          <div class="tab-buttons">
+            <button class="tab-btn active" onclick="showTab('denmark-quiz')">
+              Danmark Quiz
+            </button>
+            <button class="tab-btn" onclick="showTab('colombia-quiz')">
+              Colombia Quiz
+            </button>
+          </div>
         </div>
+
         <div class="quiz-inner-container">
-            <div class="quiz-section" id="denmark-quiz">
-                <h2>Danmark Quiz</h2>
-                <div class="question" data-correct="2">
-                    <h3 class="quiz-question">Hvad er hovedstaden i Danmark?</h3>
-                    <div class="answers">
-                        <div class="answer-input-group">
-                            <input type="radio" name="q1" value="1">
-                            <label>Aarhus</label>
-                        </div>
-
-                        <div class="answer-input-group">
-                            <input type="radio" name="q1" value="2">
-                            <label>København</label>
-                        </div>
-
-                        <div class="answer-input-group">
-                            <input type="radio" name="q1" value="3">
-                            <label>Odense</label>
-                        </div>
-        
-                    </div>
+          <div id="denmark-quiz" class="quiz-section active">
+            <h2>Danmark Quiz</h2>
+            <div class="questions-container">
+              <div class="question" data-correct="2">
+                <h3 class="quiz-question">Hvad er hovedstaden i Danmark?</h3>
+                <div class="answers">
+                  <div class="answer-input-group">
+                    <input type="radio" name="denmark-q1" value="1" />
+                    <label>Aarhus</label>
+                  </div>
+                  <div class="answer-input-group">
+                    <input type="radio" name="denmark-q1" value="2" />
+                    <label>København</label>
+                  </div>
+                  <div class="answer-input-group">
+                    <input type="radio" name="denmark-q1" value="3" />
+                    <label>Odense</label>
+                  </div>
                 </div>
-                <!-- Other Denmark questions go here -->
-            </div>
-    
-            <div class="quiz-section" id="colombia-quiz">
-                <h2>Colombia Quiz</h2>
-                <div class="question" data-correct="3">
-                    <h3 class="quiz-question">Hvad er hovedstaden i Colombia?</h3>
-                    <div class="answers">
-                        <div class="answer-input-group">
-                            <input type="radio" name="q1" value="1">
-                            <label>Medellín</label>
-                        </div>
-
-                        <div class="answer-input-group">
-                            <input type="radio" name="q1" value="2">
-                            <label>Cali</label>
-                        </div>
-
-                        <div class="answer-input-group">
-                            <input type="radio" name="q1" value="3">
-                            <label>Bogotá</label>
-                        </div>
-
-                    </div>
+              </div>
+              <div class="question" data-correct="1">
+                <h3 class="quiz-question">Hvad er Danmarks største ø?</h3>
+                <div class="answers">
+                  <div class="answer-input-group">
+                    <input type="radio" name="denmark-q2" value="1" />
+                    <label>Sjælland</label>
+                  </div>
+                  <div class="answer-input-group">
+                    <input type="radio" name="denmark-q2" value="2" />
+                    <label>Fyn</label>
+                  </div>
+                  <div class="answer-input-group">
+                    <input type="radio" name="denmark-q2" value="3" />
+                    <label>Bornholm</label>
+                  </div>
                 </div>
-                <!-- Other Colombia questions go here -->
+              </div>
+              <div class="question" data-correct="2">
+                <h3 class="quiz-question">Hvilket hav omringer Danmark?</h3>
+                <div class="answers">
+                  <div class="answer-input-group">
+                    <input type="radio" name="denmark-q3" value="1" />
+                    <label>Middelhavet</label>
+                  </div>
+                  <div class="answer-input-group">
+                    <input type="radio" name="denmark-q3" value="2" />
+                    <label>Nordsøen</label>
+                  </div>
+                  <div class="answer-input-group">
+                    <input type="radio" name="denmark-q3" value="3" />
+                    <label>Østersøen</label>
+                  </div>
+                </div>
+              </div>
+              <div class="question" data-correct="3">
+                <h3 class="quiz-question">
+                  Hvad er Danmarks nationale blomst?
+                </h3>
+                <div class="answers">
+                  <div class="answer-input-group">
+                    <input type="radio" name="denmark-q4" value="1" />
+                    <label>Roser</label>
+                  </div>
+                  <div class="answer-input-group">
+                    <input type="radio" name="denmark-q4" value="2" />
+                    <label>Tulipaner</label>
+                  </div>
+                  <div class="answer-input-group">
+                    <input type="radio" name="denmark-q4" value="3" />
+                    <label>Margerit</label>
+                  </div>
+                </div>
+              </div>
             </div>
-            <button class="submit-btn" onclick="checkAnswers()">Indsend svar</button>
-        <div id="result" class="result"></div>
+
+            <button
+              class="submit-btn"
+              onclick="checkAnswers('denmark-quiz', 'denmark-result')"
+            >
+              Indsend svar
+            </button>
+            <div id="denmark-result" class="result"></div>
+          </div>
+          <div id="colombia-quiz" class="quiz-section">
+            <h2>Colombia Quiz</h2>
+            <div class="questions-container">
+              <div class="question" data-correct="3">
+                <h3 class="quiz-question">Hvad er hovedstaden i Colombia?</h3>
+                <div class="answers">
+                  <div class="answer-input-group">
+                    <input type="radio" name="colombia-q1" value="1" />
+                    <label>Medellín</label>
+                  </div>
+                  <div class="answer-input-group">
+                    <input type="radio" name="colombia-q1" value="2" />
+                    <label>Cali</label>
+                  </div>
+                  <div class="answer-input-group">
+                    <input type="radio" name="colombia-q1" value="3" />
+                    <label>Bogotá</label>
+                  </div>
+                </div>
+              </div>
+              <div class="question" data-correct="1">
+                <h3 class="quiz-question">
+                  Hvad er Colombias største eksport?
+                </h3>
+                <div class="answers">
+                  <div class="answer-input-group">
+                    <input type="radio" name="colombia-q2" value="1" />
+                    <label>Kaffe</label>
+                  </div>
+                  <div class="answer-input-group">
+                    <input type="radio" name="colombia-q2" value="2" />
+                    <label>Bananer</label>
+                  </div>
+                  <div class="answer-input-group">
+                    <input type="radio" name="colombia-q2" value="3" />
+                    <label>Petroleum</label>
+                  </div>
+                </div>
+              </div>
+              <div class="question" data-correct="2">
+                <h3 class="quiz-question">
+                  Hvilken af følgende byer er kendt som 'La Heroica'?
+                </h3>
+                <div class="answers">
+                  <div class="answer-input-group">
+                    <input type="radio" name="colombia-q3" value="1" />
+                    <label>Barranquilla</label>
+                  </div>
+                  <div class="answer-input-group">
+                    <input type="radio" name="colombia-q3" value="2" />
+                    <label>Cartagena</label>
+                  </div>
+                  <div class="answer-input-group">
+                    <input type="radio" name="colombia-q3" value="3" />
+                    <label>Bucaramanga</label>
+                  </div>
+                </div>
+              </div>
+              <div class="question" data-correct="1">
+                <h3 class="quiz-question">
+                  Hvilken farve har Colombias flag ikke?
+                </h3>
+                <div class="answers">
+                  <div class="answer-input-group">
+                    <input type="radio" name="colombia-q4" value="1" />
+                    <label>Grøn</label>
+                  </div>
+                  <div class="answer-input-group">
+                    <input type="radio" name="colombia-q4" value="2" />
+                    <label>Gul</label>
+                  </div>
+                  <div class="answer-input-group">
+                    <input type="radio" name="colombia-q4" value="3" />
+                    <label>Blå</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button
+              class="submit-btn"
+              onclick="checkAnswers('colombia-quiz', 'colombia-result')"
+            >
+              Indsend svar
+            </button>
+            <div id="colombia-result" class="result"></div>
+          </div>
         </div>
-        
+      </div>
     </div>
-   
+
+    <img class="quiz-svg1" src="/ressourcer/svg/quiz-svg1.svg" alt="quiz svg globe">
+
+    <img class="quiz-svg2" src="/ressourcer/svg/quiz-svg2.svg" alt="quiz svg globe" style="
+    width: 180px;
+">
+
+
     <script src="/script.js"></script>
 
-</body>
+    <footer class="site-footer-container">
+      <div class="site-footer">
+        <div class="footer-content">
+          <span class="footer-text">Rejseguiden A/S &copy; 2024</span>
+          <div class="footer-social-icons">
+            <a
+              href="https://www.instagram.com"
+              target="_blank"
+              class="footer-social-icon"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a
+              href="https://www.facebook.com"
+              target="_blank"
+              class="footer-social-icon"
+            >
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a
+              href="https://www.youtube.com"
+              target="_blank"
+              class="footer-social-icon"
+            >
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>

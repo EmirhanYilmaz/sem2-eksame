@@ -1,155 +1,399 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="/lande/landstyle.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/lande/landstyle.css" />
     <script src="/script.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
-    <title>Rejseguiden | Colombia</title>
-</head>
-<body>
-
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap"
+      rel="stylesheet"
+    />
+    <title>Rejseguiden | Danmark</title>
+  </head>
+  <body>
     <div class="navbar-outer">
-        <div class="logo">
-            <a href="/index.html">
-                <img src="/ressourcer/rejseguiden_logo_uden_baggrund.png" alt="logo" class="responsive-logo">
-            </a>
+      <div class="logo">
+        <a href="/index.html">
+          <img
+            src="/ressourcer/rejseguiden_logo_uden_baggrund.png"
+            alt="logo"
+            class="responsive-logo"
+          />
+        </a>
+      </div>
+      <div class="navbar-inner">
+        <div class="nav-links">
+          <button class="close-menu" id="close-menu">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+              <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+              <path
+                d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
+              />
+            </svg>
+          </button>
+          <img
+            src="/ressourcer/rejseguiden_logo_uden_baggrund.png"
+            alt="logo"
+            class="mobile-menu-logo"
+          />
+          <a class="links" href="/">Forside</a>
+          <a class="links" href="/test-din-viden.html">Test din viden</a>
+          <a class="links" href="/om-os.html">Om os</a>
+          <a class="links" href="/kontakt.html">Kontakt os</a>
+          <div class="social-icons">
+            <a
+              href="https://www.instagram.com"
+              target="_blank"
+              class="social-icon"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a
+              href="https://www.facebook.com"
+              target="_blank"
+              class="social-icon"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="https://www.tiktok.com" target="_blank" class="social-icon"
+              ><i class="fab fa-tiktok"></i
+            ></a>
+          </div>
         </div>
-        <div class="navbar-inner">
-            <div class="nav-links">
-                <button class="close-menu" id="close-menu"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg></button>
-                <img src="/ressourcer/rejseguiden_logo_uden_baggrund.png" alt="logo" class="mobile-menu-logo">
-                <a class="links" href="/">Forside</a>
-                <a class="links" href="/test-din-viden.html">Test din viden</a>
-                <a class="links" href="/om-os.html">Om os</a>
-                <a class="links" href="/kontakt.html">Kontakt os</a>
-                <div class="social-icons">
-                    <a href="https://www.instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.tiktok.com" target="_blank" class="social-icon"><i class="fab fa-tiktok"></i></a>
-                </div>
-    
-            </div>
-    
-            <div class="burger-icon" id="burger-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
-    </div>
 
-    <div class="main-content">
-        <h3 class="phone-nav-instruction">Klik på underpunkterne for at navigere på siden!</h3>
-        <div class="country-navbar">
+        <div class="dropdown">
+          <button class="dropbtn">Menu</button>
+          <div class="dropdown-content">
             <a href="#intro">Intro</a>
             <a href="#historie">Historie</a>
             <a href="#kultur">Kultur</a>
             <a href="#byer">Byer</a>
             <a href="#gastronomi">Gastronomi</a>
-            <a href="#sevardigheder">Seværdigheder</a>
+            <a href="#sevaerdigheder">Seværdigheder</a>
             <a href="#aktiviteter">Aktiviteter</a>
             <a href="#indkvartering">Indkvartering og hotel</a>
             <a href="#praktisk">Praktisk information</a>
             <a href="#transport">Transportmuligheder</a>
+          </div>
         </div>
 
-        <div class="content">
-            <img src="billedebyer.png" alt="Colombia Image" class="large-image">
-            <h1>Velkommen til Colombia</h1>
-            <br>
-
-            <hr class="orange-line">
-            <p>Colombia har utrolig meget at byde på både historisk, kulturelt og naturmæssigt. Fra de snedækkede Andesbjerge over lavlandets tropiske regnskove til den solrige caribiske kyst ligger naturoplevelserne bare og venter. I byerne møder du en spændende arkitektur fra kolonitiden, og de smukke kaffeområder lokker med grønne marker, smilende mennesker og et dejligt klima. Befolkningen er en blanding af efterkommere af europæere, afrikanere og indianere. Med hver sin historie og kultur gør disse befolkningsgrupper Colombia til et farverigt og spændende rejseland.
-
-
-                Colombia ligger i det nordvestlige hjørne af Sydamerika og grænser op til Panama, Venezuela, Brasilien, Peru og Ecuador. Den nordlige kyst vender mod det Caribiske Hav, den vestlige mod Stillehavet. Andesbjergene deler sig i det vestlige Colombia i tre mindre bjergkæder, der strækker sig fra nord til syd og deler landet i tre: vestskråningen, central dalen og mod øst lavlandet med Amazonregnskoven og den store sump savanne Los Llanos. Colombia rummer mange forskellige naturtyper fra højalpine områder og vulkaner til tågeregnskov, mangroveskov, ørken og savanne. Ved de caribiske kyster er der desuden hvide sandstrande og koralrev. Med til Colombia hører også de idylliske øer San Andres og Providencia, der ligger langt nord for Nicaragua Kyst.</p>
-
-            <h2 id="historie">Historie</h2>
-            <hr class="orange-line">
-            <p>I 1499 gik de første spaniere i land i, hvad der i dag svarer til det nordlige Colombia, og det første, de lagde mærke til, var indianernes mange smykker og kunsthåndværk i guld. Dette gav næring til myten om det forgyldte land Eldorado, og de colombianske kyster måtte modtage et væld af spanske opdagelsesrejsende i løbet af årene. Colombia blev snart en spansk koloni under navnet Ny Granada og dækkede også det nuværende Ecuador og Venezuela. Under hele koloniperioden gjorde de indfødte colombianere spredt og effektiv modstand mod spanierne. Først da der kom gang i Simon Bolivars modstandsstyrker, blev Colombia selvstændigt. Den nye republik blev oprettet i 1819 og omfattede også Ecuador, Venezuela, Peru og Panama under navnet Gran Colombia.
-
-                Den nye republik eksisterede kun i 11 år, og 1886 blev Colombia til den republik, vi kender i dag. I det 20. århundrede havde den colombianske regering især udfordringer med guerillagrupper og handel med narkotika – narkobaronen Pablo Escobar var, indtil sin død i 1993, med til at skabe et negativt billede af landet. Befolkningen har altid været yderst hjertevarm og levet efter kristne grundværdier – selv i landets sværeste perioder. Der er nu fred, og lyse tider er endelig kommet til Colombia, som har den hurtigst voksende økonomi i Sydamerika.</p>
-            
-            <img src="billedekultur.png" alt="Colombia Image" class="large-image">
-            <h2 id="kultur">Kultur</h2>
-            <hr class="orange-line">
-            <p>Museer: Cartagena er hjemsted for flere fremragende museer, der spænder over alt fra byens historie til moderne kunst og karibisk kultur. Nogle af de mest bemærkelsesværdige er Det Moderne Kunstmuseum og Det Historiske Museum i Cartagena.
-
-                Musik og Dans: Karibisk kultur er dybt forankret i Cartagena, og det afspejles i byens levende musik- og dansemiljø. Gå ikke glip af muligheden for at opleve traditionelle musikgenrer som cumbia og vallenato live på gaderne eller i lokale barer og klubber.</p>
-            
-            <img src="billedemain.png" alt="Colombia Image" class="large-image">
-            <h2 id="byer">Byer</h2>
-            <hr class="orange-line">
-            <p>Hovedstaden Bogotá har futuristisk arkitektur, katedraler fra kolonitiden, ekstravagante stormagasiner og små gadeboder på hvert hjørne. Det historiske kvarter La Candelaria er Bogotás hjerte med sine mange kolonitidsbygninger, kirker og museer. Byens smukkeste udsigt finder man på toppen af bjerget Cerro de Monserrate. En tur med kabelvogn eller en times stigende gåtur belønnes med flotte fotomuligheder. Havnebyen Cartagena på Colombias nordkyst er kendt for sin historie og sin skønhed. Den gamle koloniby er spækket med kirker og fine arkitekturperler langs de brolagte gader.
-
-
-                Colombias næststørste by, Medellín, er blevet kåret til verdens mest innovative by, og vurderes til at være en af kontinentets bedste byer at bo i. Det nye moderne metrosystem er især vellykket, fordi man har formået at integrere nogle af de fattige områder i byens udkant, og befolkningen har nu både billig og nem transport til arbejde og uddannelse. I byen finder man også verdens største udstilling af den internationalt anerkendte kunstner Fernando Boteros malerier og skulpturer.
-                
-                Landets perle er det smukke kaffeområde, hvor de grønne kaffemarker bølger ned ad bjergskråningerne. Her oplever man en smilende og imødekommende befolkning, smuk natur og charmerende byer med arkitektur fra kolonitiden. </p>
-
-            <img src="billedemad.png" alt="Colombia Image" class="large-image">
-            <h2 id="gastronomi">Gastronomi</h2>
-            <hr class="orange-line">
-            <p>Gastronomi: Cartagena byder på et spændende udvalg af kulinariske oplevelser, der spænder fra autentisk colombiansk gadekøkken til fine restauranter med karibiske og internationale retter. Prøv lokale delikatesser som ceviche, arepas og fisk- og skaldyrsretter tilberedt på traditionel vis. 
-
-                Street Food: En af de bedste måder at opleve Cartagenas madscene på er ved at udforske dens farverige gadekøkkener og markeder. Gå ikke glip af muligheden for at prøve lokale favoritter som empanadas, arepas og frisk frugtjuice.</p>
-
-            <img src="billedesev.png" alt="Colombia Image" class="large-image">
-            <h2 id="sevardigheder">Seværdigheder</h2>
-            <hr class="orange-line">
-            <p>Rosario-øerne: Tag en bådtur ud til de smukke Rosario-øer, der ligger uden for kysten af Cartagena. Disse øer byder på hvide sandstrande, krystalklart vand og fantastiske muligheder for snorkling og dykning.
-
-                Playa Blanca: Dette er en af de mest populære strande i nærheden af Cartagena. Med sit bløde hvide sand og azurblå vand er det det perfekte sted at slappe af og nyde solen.</p>
-
-            <img src="billedeaktivi.png" alt="Colombia Image" class="large-image">
-            <h2 id="aktiviteter">Aktiviteter</h2>
-            <hr class="orange-line">
-            <p>Der er ret stort chance for, at det her er en af de hyggeligste byer, jeg nogensinde har været i og på samme tid er det en by med en masse historie. Det er eftersigende den by i verden, hvor der har været allerflest piratangreb, da englænderne prøvede at erobre byen fra spanierne.
-
-                Jeg kunne bruge timevis på at gå rundt i den gamle bydel, som er fyldt med gamle spanske, farverige huse med små altaner. I den gamle bydel er der også en masse gode spisesteder og isbutikker, som selvfølgelig er en nødvendighed i den colombianske varme. Byen har også San Filipe Castle, som er et gammelt slot fra spaniernes tid.
-                Som dagstur fra byen er der mulighed for at komme ud til en muddervulkan, hvor man kan få en mudderscrub og en omgang massage imens.
-                
-                Det eneste store minus ved byen er, at den er ret turistet. Med mange turister følger også mange gadesælgere og souvenirshops. Begge dele tager en smule af charmen. Men det ændre dog ikke på, at byen er en af de bedste oplevelser i Colombia.</p>
-
-            <h2 id="indkvartering">Indkvartering og hotel</h2>
-            <hr class="orange-line">
-            <p>Byen behøver vist ingen introduktion. Pablo Escobar, kokain og kaos. Sådan var det i hvert fald en gang. Byen har i mange år været i gennem en rivende udvikling, og i dag er det en by fyldt med smil, oplevelser og optimisme.
-                Der er ret mange ting at give sig til i byen, to af dem vil jeg skrive mere om senere i annoncen.
-                
-                En af mine store højdepunkter fra Medellin er Comuna 13 Tour. Comuna 13 var i 90’erne og 00’erne et af de farligste steder i verden, hvor der døde op imod 200 mennesker om dagen på grund af bandekrig og narkovold. I dag er der dog en helt anden optimisme i bydelen. Området er i dag kendt for graffiti, musik og kultur. Touren byder på en gåtur igennem området, hvor man hører om områdets historie og udvikling, imens man forskelligt graffiti, af kunstnere fra hele verden. Undervejs på turen er der også stop ved lokale shops, som blandt andet sælger is og kaffe.
-                
-                Derudover kan man også komme på Pablo Escobar Tour. Der er en række forskellige udbydere af turen og dit hostel vil helt klart kunne arrangere dette. På turen er der en række stop ved bl.a. hans gravsted, stedet hvor han døde og fængslet som han byggede til sig selv.</p>
-
-            <h2 id="praktisk">Praktisk information</h2>
-            <hr class="orange-line">
-            <p>Visumkrav: De fleste besøgende til Colombia behøver ikke et visum for ophold af kort varighed (typisk op til 90 dage) for turisme eller forretningsrejser. Dette gælder for mange nationaliteter, men det er altid en god idé at dobbelttjekke de specifikke krav for dit land hos Colombias ambassade eller konsulat inden din rejse.
-
-                Pas: Du skal have et gyldigt pas for at indrejse i Colombia. Sørg for, at dit pas har mindst seks måneders gyldighed fra datoen for din indrejse.
-            <br>
-            Generel Vaccination: Det anbefales altid at have de grundlæggende vaccinationer opdateret før du rejser til et nyt land. Dette inkluderer typisk vaccinationer mod difteri, stivkrampe, kighoste og mæslinger.
-
-Specifikke Vaccinationer: Afhængigt af din rejseplan og personlige sundhedsmæssige forhold kan det være nødvendigt at overveje ekstra vaccinationer. For Colombia anbefales det ofte at være vaccineret mod sygdomme som hepatitis A og B, gul feber og tyfus.
-
-COVID-19 Vaccine: Sørg for at holde dig opdateret med de seneste krav og anbefalinger vedrørende COVID-19-vaccinationer. Nogle lande og flyselskaber kan kræve, at rejsende er fuldt vaccineret mod COVID-19, før de kan indrejse.
-            <br>
-            Rejseforsikring: Det er altid en god idé at have en passende rejseforsikring, der dækker eventuelle medicinske nødsituationer, tab af ejendele og aflysninger.
-
-Valuta: Den lokale valuta i Colombia er colombianske pesos (COP). Det kan være en god idé at have nogle kontanter med dig ved ankomsten, men de fleste steder accepterer også kreditkort.
-
-Sprog: Det officielle sprog i Colombia er spansk, så det kan være nyttigt at have nogle grundlæggende sprogkundskaber eller en oversættelsesapp til rådighed under din rejse.
-            </p>
+        <div class="burger-icon" id="burger-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
         </div>
+      </div>
+    </div>
+
+    <div class="main-content">
+      <h3 class="phone-nav-instruction">
+        Klik på underpunkterne for at navigere på siden!
+      </h3>
+      <div class="parent-container">
+        <div class="country-navbar">
+          <a href="#intro">Intro</a>
+          <a href="#historie">Historie</a>
+          <a href="#kultur">Kultur</a>
+          <a href="#byer">Byer</a>
+          <a href="#gastronomi">Gastronomi</a>
+          <a href="#sevardigheder">Seværdigheder</a>
+          <a href="#aktiviteter">Aktiviteter</a>
+          <a href="#indkvartering">Indkvartering og hotel</a>
+          <a href="#praktisk">Praktisk information</a>
+          <a href="#transport">Transportmuligheder</a>
+        </div>
+      </div>
+
+      <div class="content">
+        <img
+          src="/ressourcer/Danmark/danmark-intro.jpg"
+          alt="Denmark Image"
+          class="large-image"
+        />
+        <h1>Velkommen til Danmark</h1>
+        <br />
+
+        <hr class="orange-line" />
+        <p>
+          Danmark har utrolig meget at byde på både historisk, kulturelt og
+          naturmæssigt. Fra de blide bølger ved Vesterhavet over de frodige
+          marker på Fyn til de idylliske øer i Det Sydfynske Øhav ligger
+          naturoplevelserne bare og venter. I byerne møder du en spændende
+          arkitektur fra middelalderen og renæssancen, og de charmerende
+          landsbyer lokker med bindingsværkshuse, hyggelige gader og et venligt
+          klima. Befolkningen er kendt for deres gæstfrihed og hygge, og Danmark
+          byder på en rig historie med vikinger, kongeslotte og moderne design.
+          Med en blanding af tradition og innovation er Danmark et fascinerende
+          og imødekommende rejseland.
+        </p>
+
+        <h2 id="historie">Historie</h2>
+        <hr class="orange-line" />
+        <p>
+          I 980'erne blev Danmark samlet til ét rige under kong Harald Blåtand,
+          som også indførte kristendommen. Tidligere bestod Danmark af
+          småkongeriger, som ofte lå i krig med hinanden. I middelalderen blev
+          Danmark en del af Kalmarunionen med Norge og Sverige, men unionen
+          opløstes i 1523. Under reformationen i 1536 skiftede Danmark fra
+          katolicisme til lutheranisme, og landet blev en stærk søfartsnation. I
+          1800-tallet moderniserede Danmark sig efter at have mistet Norge i
+          1814 og indførte en ny grundlov i 1849, som etablerede et
+          konstitutionelt monarki. I det 20. århundrede blev Danmark besat af
+          Tyskland under 2. Verdenskrig, men landet fokuserede på genopbygning
+          efter krigen og blev kendt for sin velfærdsmodel. I dag er Danmark
+          førende inden for grøn teknologi og bæredygtig energi og har en af
+          verdens højeste levestandarder. Befolkningen er kendt for deres
+          gæstfrihed og fællesskabsværdier, og landet spiller en aktiv rolle i
+          global politik og internationalt samarbejde.
+        </p>
+
+        <img
+          src="/ressourcer/Danmark/amalienborg.jpg"
+          alt="amalienborg Image"
+          class="large-image"
+        />
+        <h2 id="kultur">Kultur</h2>
+        <hr class="orange-line" />
+        <p>
+          Dansk kultur er præget af en stærk tradition for hygge, som handler om
+          at skabe en varm og indbydende atmosfære, ofte med venner og familie.
+          Danmark er også kendt for sit velfærdssystem, som fremmer lighed og
+          social sikkerhed, og som skaber en stærk social sammenhængskraft.
+          Design og arkitektur spiller en stor rolle i dansk kultur, med fokus
+          på minimalisme, funktionalitet og æstetik. Arkitekter som Arne
+          Jacobsen og designmærker som Bang & Olufsen er verdenskendte.
+          Traditionelle retter som smørrebrød, frikadeller og flæskesteg er
+          populære, og danske konditorier tilbyder lækkerier som wienerbrød og
+          lagkage. Cykling er en integreret del af hverdagen for mange danskere,
+          hvilket afspejler landets fokus på bæredygtighed og miljøvenlig
+          transport. Derudover er dansk litteratur, med forfattere som H.C.
+          Andersen og Karen Blixen, en vigtig del af den nationale kulturarv.
+          Festivaler som Roskilde Festival og kulturelle arrangementer som
+          Copenhagen Jazz Festival tiltrækker besøgende fra hele verden og viser
+          Danmarks livlige kunst- og kulturscene.
+        </p>
+
+        <img
+          src="/ressourcer/Danmark/kopenhavn.jpg"
+          alt="copenhagen Image"
+          class="large-image"
+        />
+        <h2 id="byer">Byer</h2>
+        <hr class="orange-line" />
+        <p>
+          Hovedstaden København har en blanding af moderne arkitektur,
+          historiske katedraler, luksuriøse stormagasiner og hyggelige
+          gadeboder. Det historiske kvarter Indre By er Københavns hjerte med
+          sine mange bygninger fra middelalderen, kirker og museer. Byens
+          smukkeste udsigt finder man fra toppen af Rundetårn eller tårnet på
+          Christiansborg Slot. En tur op ad de mange trapper belønnes med flotte
+          fotomuligheder. Havnebyen Aarhus på Jyllands østkyst er kendt for sin
+          historie og sin skønhed. Den gamle bydel er spækket med kirker og fine
+          arkitekturperler langs de brostensbelagte gader. Danmarks næststørste
+          by, Aarhus, er blevet kåret til en af Europas bedste byer at bo i, og
+          vurderes til at være en af de mest innovative byer. Det nye moderne
+          letbanesystem er især vellykket, fordi man har formået at integrere
+          nogle af de ydre byområder, og befolkningen har nu både billig og nem
+          transport til arbejde og uddannelse. I byen finder man også ARoS
+          Aarhus Kunstmuseum, som rummer en imponerende samling af moderne
+          kunst. Landets perle er det smukke område på Fyn, hvor de grønne
+          marker og skove bølger ned ad bakkerne. Her oplever man en smilende og
+          imødekommende befolkning, smuk natur og charmerende byer med
+          arkitektur fra renæssancen og barokken.
+        </p>
+
+        <img
+          src="/ressourcer/Danmark/dansk-mad.jpg"
+          alt="danish food Image"
+          class="large-image"
+        />
+        <h2 id="gastronomi">Gastronomi</h2>
+        <hr class="orange-line" />
+        <p>
+          Dansk gastronomi er kendt for sin blanding af tradition og innovation,
+          som har skabt en kulinarisk scene i verdensklasse. Traditionelle
+          danske retter som smørrebrød, rugbrød med forskelligt pålæg,
+          frikadeller og flæskesteg er populære og elsket af mange. Smørrebrød,
+          der er kunstfærdigt pyntede rugbrødssmørrebrød, er en særlig favorit
+          og nydes ofte til frokost med en snaps eller en øl. I de seneste år
+          har Danmark markeret sig internationalt med det nye nordiske køkken,
+          som blev populært af restauranter som Noma, der flere gange er blevet
+          kåret som verdens bedste restaurant. Det nye nordiske køkken fokuserer
+          på lokale, sæsonbetonede ingredienser, bæredygtighed og enkle, men
+          smagfulde retter. Ingredienser som tang, urter, bær og vilde svampe er
+          blevet almindelige i mange retter. Danske desserter og bagværk er også
+          meget populære. Wienerbrød, kendt som "Danish" i udlandet, er en sød
+          og smørfyldt favorit, mens lagkage ofte serveres til festlige
+          lejligheder. Pandekager, æbleskiver og risalamande er andre populære
+          søde retter, især omkring juletid. Fisk og skaldyr spiller en stor
+          rolle i dansk gastronomi, med friskfanget fisk som sild, rødspætte og
+          laks ofte på menuen. Danmark er også kendt for sin produktion af
+          mejeriprodukter, herunder oste som Danablu og Esrom.
+        </p>
+
+        <h2 id="sevardigheder">Seværdigheder</h2>
+        <hr class="orange-line" />
+        <p>
+          Danmark byder på en overflod af seværdigheder, der spænder fra
+          historiske slotte til moderne kunstmuseer og naturskønne områder. Tre
+          af de mest bemærkelsesværdige attraktioner er Frederiksborg Slot, Møns
+          Klint og Tivoli Gardens. Frederiksborg Slot, beliggende i Hillerød, er
+          et imponerende renæssanceslot, opført af kong Christian IV i
+          begyndelsen af 1600-tallet. Slottet fungerer nu som Nationalhistorisk
+          Museum, der fortæller Danmarks historie gennem malerier, møbler og
+          kunstværker. Slottet er omgivet af en smuk barokhave, ideel til rolige
+          gåture, med velplejede blomsterbede, skulpturer og fontæner. Møns
+          Klint på øen Møn ved Østersøkysten er en af Danmarks mest spektakulære
+          naturattraktioner. De dramatiske kridtklipper strækker sig over 6
+          kilometer og rejser sig op til 128 meter over havet. Besøgende kan
+          vandre langs klippernes stier, udforske udsigtspunkter og tage en tur
+          ned til stranden for at finde fossiler. Geocenter Møns Klint tilbyder
+          interaktive udstillinger om områdets geologi, flora og fauna. Tivoli
+          Gardens i København er en af verdens ældste forlystelsesparker,
+          grundlagt i 1843. Parken byder på smukke haver, farverige blomster,
+          springvand og kunstfærdige lysdekorationer, især om aftenen. Tivoli
+          tilbyder en bred vifte af forlystelser, restauranter, caféer og
+          koncertsteder, og er en central del af Københavns kultur og historie.
+          Disse tre seværdigheder – Frederiksborg Slot, Møns Klint og Tivoli
+          Gardens – repræsenterer det bedste af, hvad Danmark har at tilbyde,
+          med en blanding af historie, natur og kultur, der vil fascinerer og
+          begejstre enhver besøgende.
+        </p>
+
+        <h2 id="aktiviteter">Aktiviteter</h2>
+        <hr class="orange-line" />
+
+        <div class="denmark-videos">
+          <iframe width="100%" height="auto" display="block" src="https://www.youtube.com/embed/giBwx6mm5gE" title="Copenhagen travel guide" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+        <h4 class="video-intro-h4">
+          I videoen kan du lære lidt om hvordan man bruger rejsekort systemet
+        </h4>
+        <p>
+          Danmark byder på en række spændende aktiviteter, der kan
+          tilfredsstille både kulturinteresserede, naturentusiaster og
+          eventyrlystne rejsende. Uanset om du foretrækker storbyoplevelser
+          eller naturskønne omgivelser, er der noget for enhver smag. I
+          København er der et væld af kulturelle oplevelser. Besøg det berømte
+          Tivoli Gardens, en af verdens ældste forlystelsesparker, som tilbyder
+          forlystelser, koncerter og smukke haver. Kunstelskere kan udforske
+          Statens Museum for Kunst eller besøge Louisiana Museum of Modern Art i
+          Humlebæk, som byder på moderne kunst i verdensklasse. Aarhus, Danmarks
+          næststørste by, byder på ARoS Kunstmuseum med sin ikoniske
+          regnbuepanorama og Den Gamle By, et levende museum, der tager dig
+          tilbage til historiske danske bymiljøer. Byens livlige café- og
+          restaurantliv gør den også til et attraktivt sted for kulinariske
+          eventyr. For naturelskere er der mange muligheder for at udforske
+          Danmarks naturskønne områder. Tag på vandretur langs Møns Klint, hvor
+          du kan opleve de imponerende kridtklipper og finde fossiler på
+          stranden. Nationalpark Thy ved Jyllands vestkyst tilbyder vild natur,
+          klitlandskaber og et rigt dyreliv, ideelt til vandreture og cykling.
+          Kystbyerne som Skagen og Bornholm er perfekte til en afslappende ferie
+          med strandliv, vandreture og cykling. Skagen, kendt for sine unikke
+          lysforhold og kunstnerkolonier, byder på lange sandstrande og
+          charmerende fiskerihavne. Bornholm, også kaldet Østersøens perle,
+          tilbyder smukke klippekyster, rundkirker og hyggelige byer. Aktive
+          rejsende kan nyde kajaksejlads, windsurfing og kitesurfing langs de
+          danske kyster. De mange cykelstier over hele landet gør Danmark ideelt
+          til cykelture, hvor man kan opleve både by og land på to hjul. Endelig
+          er der mulighed for at opleve den danske kultur og historie på tæt
+          hold ved at besøge slotte og herregårde. Frederiksborg Slot, Kronborg
+          Slot og Egeskov Slot er blot nogle af de mange historiske bygninger,
+          der tilbyder guidede ture og indsigt i Danmarks rige fortid. Uanset
+          hvad du interesserer dig for, er der masser af aktiviteter at vælge
+          imellem i Danmark, som kan gøre din ferie både spændende og
+          mindeværdig.
+        </p>
+
+        <h2 id="indkvartering">Indkvartering og hotel</h2>
+        <hr class="orange-line" />
+        <p>
+          Indkvartering og hoteller i Danmark tilbyder et bredt udvalg af
+          muligheder, der passer til enhver smag og ethvert budget. I København
+          kan man finde luksuriøse hoteller som Hotel d'Angleterre og Nimb
+          Hotel, der tilbyder topmoderne faciliteter og fantastisk udsigt. For
+          mere budgetvenlige muligheder findes der mange charmerende
+          boutiquehoteller og vandrehjem i centrale beliggenheder. Uden for
+          hovedstaden tilbyder byer som Aarhus, Odense og Aalborg stilfulde
+          hoteller og traditionelle kroer. I Aarhus kan man eksempelvis bo på
+          det ikoniske Hotel Royal, der kombinerer historie med moderne
+          bekvemmeligheder. På landet og langs kysterne findes der charmerende
+          bed and breakfasts og feriehuse, som giver en hjemlig atmosfære. Disse
+          er ideelle for dem, der ønsker at opleve Danmarks naturskønne
+          landskaber. Bondegårdsferier og campingpladser er også populære, hvor
+          man kan bo tæt på naturen og nyde aktiviteter som vandreture og
+          cykling. Uanset hvor man overnatter i Danmark, kan man forvente høj
+          standard for service og gæstfrihed. Fra luksushoteller i byerne til
+          hyggelige bed and breakfasts på landet, er der noget for enhver
+          rejsende i Danmark.
+        </p>
+
+        <h2 id="praktisk">Praktisk information</h2>
+        <hr class="orange-line" />
+        <p>
+          Visumkrav: Borgere fra EU- og Schengen-lande kan rejse visumfrit til
+          Danmark. Rejsende fra visse andre lande kan opholde sig visumfrit i op
+          til 90 dage inden for en 180-dages periode. Borgere fra lande uden
+          visumfri adgang skal ansøge om et Schengen-visum inden rejsen. Pas: Et
+          gyldigt pas er påkrævet for indrejse i Danmark. Pas skal som regel
+          være gyldigt i mindst tre måneder ud over opholdets varighed, men det
+          anbefales at tjekke de specifikke krav baseret på din nationalitet.
+          Vaccinationer: Der er ingen obligatoriske vaccinationer for at rejse
+          til Danmark. Det er dog altid en god idé at sikre, at dine
+          rutinemæssige vaccinationer er opdaterede, herunder MFR (mæslinger,
+          fåresyge, røde hunde) og stivkrampe. Valuta: Den danske valuta er
+          danske kroner (DKK). Kreditkort som Visa og MasterCard accepteres
+          bredt, og der er mange hæveautomater tilgængelige i byerne. Sprog: Det
+          officielle sprog i Danmark er dansk. Engelsk er udbredt og forstås af
+          de fleste danskere, især i turistområder og større byer.
+        </p>
+        <h2 id="transport">Transportmuligheder</h2>
+        <hr class="orange-line" />
+
+        <div class="denmark-videos">
+          <iframe width="100%" height="auto" display="block" src="https://www.youtube.com/embed/uPgvBWBIIQA" title="Rejsekort video logo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+        <h4 class="video-intro-h4">
+          I videoen kan du lære lidt om hvordan man bruger rejsekort systemet
+        </h4>
+
+        <p>
+          Danmark har et veludviklet og effektivt transportsystem, der gør det
+          nemt at komme rundt i landet. Tog: Tognettet, drevet af DSB, forbinder
+          de største byer og mange mindre byer. Togrejser er komfortable og
+          punktlige, med hyppige afgange. Bus: Der er omfattende busnetværk i
+          både byer og på landet. Movia, Arriva og andre selskaber tilbyder
+          pålidelige og regelmæssige busforbindelser. Metro og S-tog: København
+          har et moderne metro- og S-togssystem, der dækker byen og dens
+          forstæder. Metroen kører døgnet rundt, og S-tog er en hurtig måde at
+          komme rundt på. Cykel: Danmark er kendt for sin cykelvenlighed. Der er
+          cykelstier overalt, og cykeludlejning er nemt tilgængeligt i de fleste
+          byer. Bil: Biludlejning er muligt i større byer og lufthavne.
+          Motorvejsnettet er godt udbygget, og kørsel er sikker og let. Færger:
+          Forbindelser til øerne og mellem Jylland og Sjælland er gode med
+          hyppige færgeafgange. Færger er en vigtig del af transporten, især til
+          øerne. Fly: Der er flere regionale lufthavne, men Københavns Lufthavn
+          er hovedknudepunktet for internationale og indenlandske flyvninger.
+          Disse transportmuligheder gør det let og bekvemt at rejse rundt i
+          Danmark.
+        </p>
+      </div>
     </div>
 
     <div class="social-icons">
-        <a href="https://www.instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.tiktok.com" target="_blank" class="social-icon"><i class="fab fa-tiktok"></i></a>
+      <a href="https://www.instagram.com" target="_blank" class="social-icon"
+        ><i class="fab fa-instagram"></i
+      ></a>
+      <a href="https://www.facebook.com" target="_blank" class="social-icon"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
+      <a href="https://www.tiktok.com" target="_blank" class="social-icon"
+        ><i class="fab fa-tiktok"></i
+      ></a>
     </div>
-
-</body>
+  </body>
 </html>

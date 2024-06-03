@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const closeMenuButton = document.querySelector('#close-menu');
 
     burgerMenu.addEventListener('click', function(event) {
-        event.stopPropagation(); // Prevent the click from bubbling up to the document
+        event.stopPropagation(); 
         navLinks.classList.toggle('show');
     });
 
@@ -13,6 +13,56 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    var dropdown = document.querySelector('.dropdown');
+    var dropdownContent = document.querySelector('.dropdown-content');
+    var dropbtn = document.querySelector('.dropbtn');
+
+    function getOffset() {
+        var navbarHeight = document.querySelector('.navbar-inner').offsetHeight;
+        var extraOffset = window.innerWidth < 768 ? 20 : 0; 
+        return navbarHeight + extraOffset;
+    }
+
+    dropbtn.addEventListener('click', function(event) {
+        event.preventDefault();
+        dropdownContent.style.display = (dropdownContent.style.display === 'block') ? 'none' : 'block';
+    });
+
+    window.addEventListener('click', function(event) {
+        if (!event.target.matches('.dropbtn')) {
+            if (dropdownContent.style.display === 'block') {
+                dropdownContent.style.display = 'none';
+            }
+        }
+    });
+
+    document.querySelectorAll('.dropdown-content a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            var targetId = this.getAttribute('href').substring(1);
+            var targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                var offset = getOffset();
+                var targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
+
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+
+                dropdownContent.style.display = 'none';
+            }
+        });
+    });
+});
+
+
+
+
+
 
 document.addEventListener("DOMContentLoaded", function () {
     const countryMenuButton = document.getElementById('country-menu');
@@ -201,7 +251,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         {
             "id": "CO",
-            "title": "Colombien",
+            "title": "Colombia",
             "d": "M263.917,463.809L262.717,463.149L261.341,462.227L260.544,462.669L258.165,462.283L257.481,461.085L256.959,461.129L254.154,459.539L253.774,458.674L254.82,458.465L254.696,457.069L255.354,456.059L256.745,455.872L257.925,454.12L258.998,452.655L257.965,451.991L258.494,450.37L257.861,447.812L258.462,447.077L258.02,444.707L256.885,443.212L257.244,441.847L258.147,442.048L258.676,441.213L258.025,439.555L258.366,439.143L259.814,439.232L261.918,437.264L263.073,436.963L263.1,436.029L263.617,433.637L265.225,432.321L266.992,432.267L267.215,431.675L269.409,431.912L271.615,430.477L272.708,429.84L274.065,428.467L275.059,428.642L275.794,429.392L275.25,430.351L273.449,430.828L272.737,432.248L271.652,433.062L270.837,434.115L270.494,436.134L269.717,437.786L271.164,437.975L271.523,439.271L272.142,439.89L272.364,441.023L272.031,442.064L272.129,442.65L272.819,442.885L273.487,443.864L277.093,443.594L278.722,443.951L280.695,446.364L281.828,446.064L283.848,446.214L285.446,445.895L286.438,446.376L285.933,447.884L285.307,448.823L285.087,450.828L285.651,452.684L286.448,453.513L286.545,454.138L285.124,455.526L286.141,456.141L286.887,457.115L287.742,459.894L287.212,460.237L286.666,458.594L285.887,457.71L284.959,458.671L279.497,458.608L279.531,460.352L281.174,460.64L281.079,461.707L280.519,461.418L278.939,461.877L278.925,463.901L280.169,464.917L280.608,466.512L280.542,467.72L279.282,475.367L277.878,473.883L277.041,473.817L278.85,470.978L276.703,469.672L275.02,469.912L274.007,469.43L272.462,470.167L270.375,469.817L268.723,466.896L267.425,466.178L266.53,464.864L264.665,463.544z"
         },
         {
@@ -947,6 +997,9 @@ document.addEventListener("DOMContentLoaded", function () {
             d3.select(this).attr("fill", "#c0c0c0");
             document.getElementById('country-name').innerText = "Hold over et land"; // Reset the country name
         })
+        .on("click", function (event, d) {
+            window.location.href = `/lande/${d.title.toLowerCase()}.html`; // Redirect to the country's page
+        });
 
        
         
@@ -969,18 +1022,66 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-function checkAnswers() {
-    let score = 0;
-    const questions = document.querySelectorAll('.question');
-    questions.forEach((question, index) => {
+let lastSelected = {};
+
+function toggleRadio(radio) {
+    const name = radio.name;
+    if (lastSelected[name] === radio) {
+        radio.checked = false;
+        lastSelected[name] = null;
+    } else {
+        lastSelected[name] = radio;
+    }
+}
+
+
+
+function checkAnswers(quizId, resultId) {
+    const quiz = document.getElementById(quizId);
+    const questions = quiz.querySelectorAll('.question');
+    let correctCount = 0;
+
+    questions.forEach(question => {
         const correctAnswer = question.getAttribute('data-correct');
         const selectedAnswer = question.querySelector('input[type="radio"]:checked');
         if (selectedAnswer && selectedAnswer.value === correctAnswer) {
-            score++;
+            correctCount++;
         }
     });
-    document.getElementById('result').textContent = `Du fik ${score} ud af ${questions.length} rigtige`;
+
+    const result = document.getElementById(resultId);
+    result.textContent = `Du svarede korrekt på ${correctCount} ud af ${questions.length} spørgsmål.`;
 }
+
+  function showTab(tabId) {
+            const tabs = document.querySelectorAll('.quiz-section');
+            const buttons = document.querySelectorAll('.tab-btn');
+
+            tabs.forEach(tab => tab.classList.remove('active'));
+            buttons.forEach(button => button.classList.remove('active'));
+
+            document.getElementById(tabId).classList.add('active');
+            document.querySelector(`button[onclick="showTab('${tabId}')"]`).classList.add('active');
+        }
+
+        function checkAnswers(quizId, resultId) {
+            const quiz = document.getElementById(quizId);
+            const questions = quiz.querySelectorAll('.question');
+            let correctCount = 0;
+
+            questions.forEach(question => {
+                const correctAnswer = question.getAttribute('data-correct');
+                const selectedAnswer = question.querySelector('input[type="radio"]:checked');
+                if (selectedAnswer && selectedAnswer.value === correctAnswer) {
+                    correctCount++;
+                }
+            });
+
+            const result = document.getElementById(resultId);
+            result.textContent = `Du svarede korrekt på ${correctCount} ud af ${questions.length} spørgsmål.`;
+        }
+
+
 
 
 
