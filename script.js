@@ -3,33 +3,37 @@ document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelector('.nav-links');
     const closeMenuButton = document.querySelector('#close-menu');
 
+    // Åbn eller luk menuen når burger-ikonet klikkes
     burgerMenu.addEventListener('click', function(event) {
         event.stopPropagation(); 
         navLinks.classList.toggle('show');
     });
 
+    // Luk menuen når lukke-knappen klikkes
     closeMenuButton.addEventListener('click', function(event) {
         navLinks.classList.remove('show');
     });
-    
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-    var dropdown = document.querySelector('.dropdown');
-    var dropdownContent = document.querySelector('.dropdown-content');
-    var dropbtn = document.querySelector('.dropbtn');
+    const dropdown = document.querySelector('.dropdown');
+    const dropdownContent = document.querySelector('.dropdown-content');
+    const dropbtn = document.querySelector('.dropbtn');
 
+    // Få offset fra navbaren og ekstra plads til mobilvisning
     function getOffset() {
-        var navbarHeight = document.querySelector('.navbar-inner').offsetHeight;
-        var extraOffset = window.innerWidth < 768 ? 20 : 0; 
+        const navbarHeight = document.querySelector('.navbar-inner').offsetHeight;
+        const extraOffset = window.innerWidth < 768 ? 20 : 0; 
         return navbarHeight + extraOffset;
     }
 
+    // Åbn eller luk dropdown-menuen
     dropbtn.addEventListener('click', function(event) {
         event.preventDefault();
         dropdownContent.style.display = (dropdownContent.style.display === 'block') ? 'none' : 'block';
     });
 
+    // Luk dropdown-menuen når der klikkes udenfor
     window.addEventListener('click', function(event) {
         if (!event.target.matches('.dropbtn')) {
             if (dropdownContent.style.display === 'block') {
@@ -38,15 +42,16 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    // Scroll til det ønskede element når der klikkes på et link i dropdown-menuen i lande siden
     document.querySelectorAll('.dropdown-content a').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
 
-            var targetId = this.getAttribute('href').substring(1);
-            var targetElement = document.getElementById(targetId);
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
             if (targetElement) {
-                var offset = getOffset();
-                var targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
+                const offset = getOffset();
+                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
 
                 window.scrollTo({
                     top: targetPosition,
@@ -59,30 +64,26 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-
-
-
-
-
 document.addEventListener("DOMContentLoaded", function () {
     const countryMenuButton = document.getElementById('country-menu');
     const dropdownMenu = document.getElementById('dropdown-menu');
 
-    if(countryMenuButton){
+    if (countryMenuButton) {
+        // Åbn eller luk landemenuen når country-menu-knappen klikkes
+        countryMenuButton.addEventListener('click', function (event) {
+            event.stopPropagation();
+            dropdownMenu.style.display = dropdownMenu.style.display === 'none' ? 'block' : 'none';
+        });
 
-    countryMenuButton.addEventListener('click', function (event) {
-        event.stopPropagation();
-        dropdownMenu.style.display = dropdownMenu.style.display === 'none' ? 'block' : 'none';
-    });
-
-    document.addEventListener('click', function () {
-        if (dropdownMenu.style.display === 'block') {
-            dropdownMenu.style.display = 'none';
-        }
-    });
+        // Luk landemenuen når der klikkes udenfor
+        document.addEventListener('click', function () {
+            if (dropdownMenu.style.display === 'block') {
+                dropdownMenu.style.display = 'none';
+            }
+        });
     }
 
-    // Ensure that countriesData is defined
+    // Sørg for, at countriesData er defineret
     const countriesData = [
         {
             "id": "AE",
@@ -966,20 +967,19 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     ];
     
-
     const svg = d3.select("#map-container")
         .append("svg")
-        .attr("viewBox", `0 0 1008 651`) // Use the original viewBox of the SVG
-        .attr("preserveAspectRatio", "xMidYMid meet") // Preserve aspect ratio
+        .attr("viewBox", "0 0 1008 651") // Brug den oprindelige viewBox for SVG
+        .attr("preserveAspectRatio", "xMidYMid meet") // Bevar aspektforhold
         .call(d3.zoom()
-            .scaleExtent([0.6, 8]) // Set the minimum and maximum zoom levels
-            .translateExtent([[0, 0], [1008, 651]]) // Set the limits for panning
+            .scaleExtent([0.6, 8]) // Indstil minimum og maksimum zoom niveauer
+            .translateExtent([[0, 0], [1008, 651]]) // Indstil grænser for panorering
             .on("zoom", function (event) {
                 svg.attr("transform", event.transform);
             }))
         .append("g");
 
-    // Append the countries to the SVG
+    // Tilføj landene til SVG
     svg.selectAll("path")
         .data(countriesData)
         .enter()
@@ -988,30 +988,28 @@ document.addEventListener("DOMContentLoaded", function () {
         .attr("title", d => d.title)
         .attr("d", d => d.d)
         .attr("class", "country")
-        .attr("fill", "#0088cc") // Set the initial fill color
-        .attr("stroke", "#ffffff") // Set the stroke color
+        .attr("fill", "#0088cc") // Indstil initial farve
+        .attr("stroke", "#ffffff") // Indstil stroke farve
         .on("mouseover", function (event, d) {
-            document.getElementById('country-name').innerText = d.title; // Update the country name
+            document.getElementById('country-name').innerText = d.title; // Opdater landsnavn
         })
         .on("mouseout", function (event, d) {
             d3.select(this).attr("fill", "#c0c0c0");
-            document.getElementById('country-name').innerText = "Hold over et land"; // Reset the country name
+            document.getElementById('country-name').innerText = "Hold over et land"; // Nulstil landsnavn
         })
         .on("click", function (event, d) {
-            window.location.href = `/lande/${d.title.toLowerCase()}.html`; // Redirect to the country's page
+            window.location.href = `/lande/${d.title.toLowerCase()}.html`; // Omstil til landets side
         });
-
-       
-        
 });
 
 document.addEventListener("DOMContentLoaded", function() {
+    // Scroll til det ønskede element når der klikkes på et link i højre sidebar
     document.querySelectorAll('.right-sidebar a').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
             const targetId = this.getAttribute('href').substring(1);
             const targetElement = document.getElementById(targetId);
-            
+
             if (targetElement) {
                 window.scrollTo({
                     top: targetElement.offsetTop,
@@ -1024,6 +1022,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 let lastSelected = {};
 
+// Funktion til at toggle radio knapper
 function toggleRadio(radio) {
     const name = radio.name;
     if (lastSelected[name] === radio) {
@@ -1034,8 +1033,7 @@ function toggleRadio(radio) {
     }
 }
 
-
-
+// Funktion til at tjekke quiz svar
 function checkAnswers(quizId, resultId) {
     const quiz = document.getElementById(quizId);
     const questions = quiz.querySelectorAll('.question');
@@ -1053,38 +1051,16 @@ function checkAnswers(quizId, resultId) {
     result.textContent = `Du svarede korrekt på ${correctCount} ud af ${questions.length} spørgsmål.`;
 }
 
-  function showTab(tabId) {
-            const tabs = document.querySelectorAll('.quiz-section');
-            const buttons = document.querySelectorAll('.tab-btn');
+// Funktion til at vise en bestemt fane
+function showTab(tabId) {
+    const tabs = document.querySelectorAll('.quiz-section');
+    const buttons = document.querySelectorAll('.tab-btn');
 
-            tabs.forEach(tab => tab.classList.remove('active'));
-            buttons.forEach(button => button.classList.remove('active'));
+    tabs.forEach(tab => tab.classList.remove('active'));
+    buttons.forEach(button => button.classList.remove('active'));
 
-            document.getElementById(tabId).classList.add('active');
-            document.querySelector(`button[onclick="showTab('${tabId}')"]`).classList.add('active');
-        }
-
-        function checkAnswers(quizId, resultId) {
-            const quiz = document.getElementById(quizId);
-            const questions = quiz.querySelectorAll('.question');
-            let correctCount = 0;
-
-            questions.forEach(question => {
-                const correctAnswer = question.getAttribute('data-correct');
-                const selectedAnswer = question.querySelector('input[type="radio"]:checked');
-                if (selectedAnswer && selectedAnswer.value === correctAnswer) {
-                    correctCount++;
-                }
-            });
-
-            const result = document.getElementById(resultId);
-            result.textContent = `Du svarede korrekt på ${correctCount} ud af ${questions.length} spørgsmål.`;
-        }
-
-
-
-
-
-
+    document.getElementById(tabId).classList.add('active');
+    document.querySelector(`button[onclick="showTab('${tabId}')"]`).classList.add('active');
+}
 
 

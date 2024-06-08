@@ -3,34 +3,35 @@
     margin: 20px;
 }
 
-.content h1{
+.content h1 {
     font-size: 55px;
 }
-.content h2{
+
+.content h2 {
     font-size: 40px;
 }
 
 .phone-nav-instruction {
     display: none;
 }
-.dropdown{
+
+.dropdown {
     display: none;
 }
 
-/* NAVBAR style*/
+/* NAVBAR style */
 @media (max-width: 768px) {
     .navbar-inner {
         flex: 1;
         background-color: #0088CC;
         border-radius: 10px;
         display: flex;
-        justify-content: space-between;  
-        align-items: center;  
+        justify-content: space-between;
+        align-items: center;
         position: relative;
         z-index: 9999999;
-        padding: 0 10px;  
+        padding: 0 10px;
     }
-
 
     .links {
         font-size: 20px;
@@ -39,9 +40,9 @@
 
     .dropdown {
         position: relative;
-        flex: 1;  
+        flex: 1;
         display: flex;
-        justify-content: center;  
+        justify-content: center;
     }
 
     .dropbtn {
@@ -55,13 +56,13 @@
 
     .dropdown-content {
         display: none;
-        position: fixed;  
-        top: 11%;  
-        width: 100%;  
+        position: fixed;
+        top: 11%;
+        width: 100%;
         background-color: #0088CC;
-        z-index: 1000;  
-        padding-top: 60px;  
-        overflow: hidden;  
+        z-index: 1000;
+        padding-top: 60px;
+        overflow: hidden;
     }
 
     .dropdown-content a {
@@ -83,9 +84,6 @@
         padding: 10px;
     }
 }
-
-
-
 
 .main-content {
     display: flex;
@@ -117,7 +115,8 @@
 
 .content {
     flex: 1;
-margin: 3rem;}
+    margin: 3rem;
+}
 
 .large-image {
     width: 100%;
@@ -156,7 +155,8 @@ margin: 3rem;}
     height: auto;
 }
 
-.left-half-omos, .right-half-omos {
+.left-half-omos,
+.right-half-omos {
     flex: 1;
     display: flex;
     justify-content: center;
@@ -188,12 +188,12 @@ margin: 3rem;}
 .right-half-omos p {
     font-size: 1.2em;
     color: #333;
-    max-width: 600px; 
-    margin: 0 auto; 
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .highlight-omos {
-    color: #fba708; 
+    color: #fba708;
 }
 
 .video-container-omos {
@@ -201,7 +201,7 @@ margin: 3rem;}
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     overflow: hidden;
-    max-width: 90%; 
+    max-width: 90%;
     max-height: 90%;
     pointer-events: none; /* Disable interactions with the video */
 }
@@ -211,21 +211,22 @@ video {
     width: 100%;
     height: auto;
 }
-.denmark-videos{
+
+.denmark-videos {
     max-width: 600px;
     margin: 2rem;
 }
 
-.video-intro-h4{
+.video-intro-h4 {
     margin: 2rem;
 }
-.country:hover{
+
+.country:hover {
     fill: #fba708;
 }
-@media (max-width: 500px) {
-  
-}
 
+@media (max-width: 500px) {
+}
 
 @media (max-width: 768px) {
     .container-omos {
@@ -233,7 +234,8 @@ video {
         max-width: 95%;
     }
 
-    .left-half-omos, .right-half-omos {
+    .left-half-omos,
+    .right-half-omos {
         flex: none;
         width: 100%;
         padding: 10px;
@@ -263,16 +265,19 @@ video {
         flex-direction: column;
         align-items: center;
     }
+
     .contact-form {
         margin-right: 0;
     }
+
     .filler-text {
         margin-top: 20px;
     }
-    
+
     .message-icon {
         margin-left: 10px;
     }
+
     .contact-form label,
     .contact-form input,
     .contact-form textarea,
@@ -281,12 +286,11 @@ video {
         max-width: none;
     }
 
-  
     .message-icon {
-        margin-top: 10px; 
-        margin-left: 10px; 
-        position: relative; 
-        top: -30px; 
+        margin-top: 10px;
+        margin-left: 10px;
+        position: relative;
+        top: -30px;
     }
 
     .main-content {
@@ -294,7 +298,6 @@ video {
         align-items: center;
         text-align: center;
         margin-top: 120px;
-
     }
 
     .country-navbar {
@@ -324,7 +327,7 @@ video {
         background-color: orange;
         padding: 10px;
         box-sizing: border-box;
-        display: none; 
+        display: none;
     }
 
     .sidebar.active {
@@ -361,13 +364,11 @@ video {
     h3 {
         font-size: 30px;
     }
-
-  }
- 
-  @media (min-width: 769px) {
-    .country-navbar {
-        position: sticky;
-        top: 30%; 
-    }
 }
 
+@media (min-width: 769px) {
+    .country-navbar {
+        position: sticky;
+        top: 30%;
+    }
+}

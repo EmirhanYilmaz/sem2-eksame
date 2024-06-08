@@ -1,3 +1,8 @@
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   overflow-x: hidden;
   background-color: #FFF0E6;
@@ -116,6 +121,23 @@ a {
 }
 
 
+img.mobile-menu-logo {
+  width: 150px;
+  margin-bottom: 30px;
+}
+
+.nav-links.show button#close-menu {
+  opacity: 1;
+}
+
+.nav-links {
+  height: 100vh;
+  width: 80%;
+}
+
+.social-icons{
+margin-top: 20px  !important;
+}
 
 /* Landing Page Styles */
 .landingpage-outer-container {
@@ -640,286 +662,257 @@ span.highlight-omos {
 
 /* Media Queries */
 
-@media (min-width: 600px) {
-  .choose-country-btn{
-    width: 300px;
-    height: 70px;
-    font-size: 20px;
-  }
-  .quiz-svg1 {
-    width: 120px;
-  }
-  
-}
-
-@media (min-width: 900px) {
-  .burger-icon,
-  .close-menu {
-    display: none !important;
-  }
-
-  .nav-links {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: auto;
-    position: relative;
-    background-color: transparent;
-    box-shadow: none;
-    padding: 0;
-    max-width: none;
-  }
-
-  .nav-links a {
-    margin-left: 10px;
-    font-size: 20px !important;
-    font-weight: 400;
-  }
-  .quiz-svg1, .quiz-svg2{
-    width: 180px;
-  }
-}
-
-@media (min-width: 1000px) {
-  .world-map-container {
-    display: block;
-    width: 100vw;
-    height: 80vh;
-  }
-
-  .map-outer-container {
-    display: flex;
-    flex: 1;
-  }
-
-  .choose-country-btn {
-    display: none;
-    cursor: pointer;
-
-  }
-
-  .landingpage-content {
-    flex-direction: row !important;
-    padding: 3rem 15px 0 15px;
-  }
-
-  .landingpage-info {
-    width: 25vw;
-    font-size: 25px;
-  }
-
-  .blue {
-    font-size: 30px;
-  }
-
-  .yellow {
-    font-size: 60px;
-  }
-
-  .navbar-outer {
-    padding: 10px;
-  }
-  .quiz-outer-container{
-    justify-content: center;
-  }
-  .quiz-inner-container{
-    margin: 2rem;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-  }
- 
-  .quiz-intro h1{
-    font-size: 50px;
-  }
-  .questions-container{
-    display: flex;
-  }
-  .questions-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between; 
-}
-
-.question {
-    width: calc(30% - 10px); 
-    margin-bottom: 20px; 
-    padding: 15px;
-    box-sizing: border-box;
-}
-
-.answers {
-    display: flex;
-    flex-direction: column;
-}
-
-.answer-input-group {
-    margin-top: 10px; 
-}
-  
-  
-}
-
-
-
-
-@media (max-width: 1000px) {
-  .world-map-container {
-    display: none;
-    width: 100vw;
-    height: 80vh;
-  }
-}
-
-@media only screen and (max-width: 500px) {
-  .nav-links {
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 100vh;
-    width: 80%;
-    background-color: #0088CC;
-    flex-direction: column;
-    border-radius: 10px;
-    padding: 40px;
-    z-index: 99999;
-    transition: 0.3s ease;
-    transform: translateX(100%);
-  }
-
-  .links {
-    font-size: 20px;
-    margin: 10px 0;
-  }
-
-  .landingpage-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 3rem;
-  }
-
-  .landingpage-outer-container {
-    display: flex;
-    width: 100vw;
-  }
-
-  .choose-country-btn {
-    width: 200px;
-    height: 50px;
-    background-color: #fba708;
-    border-radius: 10px;
-    margin-top: 20px;
-    cursor: pointer;
-
-  }
-}
-
-
-.logo {
-    display: flex;
-}
-
-* {
-    box-sizing: border-box;
-}
-
-.landingpage-outer-container > img {
-    width: 100%;
-    display: none;
-}
-
+/* General styles */
 .container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-@media only screen and (min-width: 1000px) {
-.hero-content {
-    align-items: self-start;
-}
-  img.responsive-logo {
-    height: 80px;
-}
-  .landingpage-outer-container > img {
-    width: 100%;
-    display: flex;
-}
-}
-
-img.mobile-menu-logo {
-    width: 150px;
-    margin-bottom: 30px;
-}
-
-.nav-links.show button#close-menu {
-    opacity: 1;
-}
-
-.nav-links {
-    height: 100vh;
-    width: 80%;
-}
-
-
-@media only screen and (min-width: 900px) {
-
-img.mobile-menu-logo {
-    width: 151px;
-    margin-bottom: 30px;
-}
-
-.nav-links.show button#close-menu {
-    opacity: 1;
-}
-
-img.mobile-menu-logo {
-    display: none;
-}
-
-.social-icons {
-    display: none;
-}
-
-  
-.nav-links {
-    height: auto;
-    width: fit-content;
-}
-.container-omos {
-  gap: 60px;
-}
-
-.left-half-omos {
-  flex: 1;
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
-.right-half-omos {
-  flex: 1;
-}
-.text-content-omos p {
-white-space: pre-wrap;
-font-size: 22px;
-}
-
-.video-container-omos video {
-height: 100%;
-object-fit: cover;
-object-position: center;
+/* Media Query for min-width: 600px */
+@media (min-width: 600px) {
+  .choose-country-btn {
+      width: 300px;
+      height: 70px;
+      font-size: 20px;
+  }
+  .quiz-svg1 {
+      width: 120px;
+  }
 }
 
-.video-container-omos {
-height: 100%;
+/* Media Query for min-width: 1000px */
+@media (min-width: 1000px) {
+  .burger-icon,
+  .close-menu {
+      display: none !important;
+  }
+
+  .nav-links {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      width: auto;
+      position: relative;
+      background-color: transparent;
+      box-shadow: none;
+      padding: 0;
+      max-width: none;
+      height: auto;
+      width: fit-content;
+  }
+
+  .nav-links a {
+      margin-left: 10px;
+      font-size: 20px !important;
+      font-weight: 400;
+  }
+
+  .quiz-svg1,
+  .quiz-svg2 {
+      width: 180px;
+  }
+
+  .world-map-container {
+      display: block;
+      width: 100vw;
+      height: 80vh;
+  }
+
+  .map-outer-container {
+      display: flex;
+      flex: 1;
+  }
+
+  .choose-country-btn {
+      display: none;
+      cursor: pointer;
+  }
+
+  .landingpage-content {
+      flex-direction: row !important;
+      padding: 3rem 15px 0 15px;
+  }
+
+  .landingpage-info {
+      width: 25vw;
+      font-size: 25px;
+  }
+
+  .blue {
+      font-size: 30px;
+  }
+
+  .yellow {
+      font-size: 60px;
+  }
+
+  .navbar-outer {
+      padding: 10px;
+  }
+
+  .quiz-outer-container {
+      justify-content: center;
+  }
+
+  .quiz-inner-container {
+      margin: 2rem;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+  }
+
+  .quiz-intro h1 {
+      font-size: 50px;
+  }
+
+  .questions-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+  }
+
+  .question {
+      width: calc(30% - 10px);
+      margin-bottom: 20px;
+      padding: 15px;
+      box-sizing: border-box;
+  }
+
+  .answers {
+      display: flex;
+      flex-direction: column;
+  }
+
+  .answer-input-group {
+      margin-top: 10px;
+  }
+
+  .hero-content {
+      align-items: self-start;
+  }
+
+  img.responsive-logo {
+      height: 80px;
+  }
+
+  .landingpage-outer-container > img {
+      width: 100%;
+      display: flex;
+  }
+
+  img.mobile-menu-logo {
+      width: 151px;
+      margin-bottom: 30px;
+      display: none;
+  }
+
+  .nav-links.show button#close-menu {
+      opacity: 1;
+  }
+
+  .social-icons {
+      display: none;
+  }
+
+  .container-omos {
+      gap: 60px;
+  }
+
+  .left-half-omos,
+  .right-half-omos {
+      flex: 1;
+      margin: 0 auto;
+  }
+
+  .text-content-omos p {
+      white-space: pre-wrap;
+      font-size: 22px;
+  }
+
+  .video-container-omos video {
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+  }
+
+  .video-container-omos {
+      height: 100%;
+  }
+
+  .video-container-omos > img {
+      width: 130px;
+  }
 }
-.video-container-omos > img {
-width: 130px;
+
+/* Media Query for max-width: 1000px */
+@media (max-width: 1000px) {
+  .world-map-container {
+      display: none;
+      width: 100vw;
+      height: 80vh;
+  }
+
+  .close-menu-container {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+  }
+
+  .close-menu {
+      width: 60px;
+      margin-bottom: 40px;
+  }
+
+  .nav-links {
+      align-items: center;
+  }
 }
 
+/* Media Query for max-width: 500px */
+@media only screen and (max-width: 500px) {
+  .nav-links {
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: 100vh;
+      width: 80%;
+      background-color: #0088CC;
+      flex-direction: column;
+      border-radius: 10px;
+      padding: 40px;
+      z-index: 99999;
+      transition: 0.3s ease;
+      transform: translateX(100%);
+  }
 
+  .links {
+      font-size: 20px;
+      margin: 10px 0;
+  }
 
+  .landingpage-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 3rem;
+  }
+
+  .landingpage-outer-container {
+      display: flex;
+      width: 100vw;
+  }
+
+  .choose-country-btn {
+      width: 200px;
+      height: 50px;
+      background-color: #fba708;
+      border-radius: 10px;
+      margin-top: 20px;
+      cursor: pointer;
+  }
 }
 
 
